@@ -4,7 +4,11 @@ require "bike"
 describe Garage do
 
 	let(:bike) { Bike.new }
-	let(:garage) { Garage.new }
+	let(:garage) { Garage.new(:capacity => 100) }
+
+  def fill_garage(garage)
+    100.times { garage.accept(bike) }
+  end
   
   it "should accept broken bikes" do
     expect(garage.bike_count).to eq(0)
@@ -17,6 +21,12 @@ describe Garage do
     bike.fix
     garage.release(bike)
     expect(garage.bike_count).to eq(0)
+  end
+
+  it "should know when it's full" do
+    expect(garage).not_to be_full
+    fill_garage(garage)
+    expect(garage).to be_full
   end
 
 	
