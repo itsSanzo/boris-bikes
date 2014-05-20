@@ -3,7 +3,7 @@ require "docking_station"
 describe DockingStation do
 
   let(:bike) { Bike.new }
-  let(:station) { DockingStation.new(:capacity => 20) }
+  let(:station) { DockingStation.new }
 
   def fill_station(station)
     20.times { station.dock(bike) }

@@ -12,6 +12,7 @@ class Garage
   end
 
   def accept(bike)
+    raise "Garage is full" if full?
     @bikes << bike
   end
 

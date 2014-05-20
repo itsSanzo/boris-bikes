@@ -29,5 +29,10 @@ describe Garage do
     expect(garage).to be_full
   end
 
+  it "should not accept a bike if it's full" do
+    fill_garage(garage)
+    expect(lambda { garage.accept(bike) }).to raise_error(RuntimeError)
+  end
+
 	
 end
