@@ -11,7 +11,7 @@ class Van
     @bikes.count
   end
 
-  def dock(bike)
+  def collect(bike)
     @bikes << bike
   end
 
@@ -19,8 +19,8 @@ class Van
     bike_count == @capacity
   end
 
-  def fill_van
-
+  def release(bike)
+    @bikes.delete(bike)
   end
 
 end

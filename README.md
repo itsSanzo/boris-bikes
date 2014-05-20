@@ -16,3 +16,4 @@ This test was set by [Evgeny Shadchnev](https://github.com/shadchnev) at [Makers
 ## Technologies used
 * Ruby
 * TDD with Rspec
+* CRC cards (Class, Responsibilities, Collaborators)
